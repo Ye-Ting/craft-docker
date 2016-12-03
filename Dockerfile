@@ -5,7 +5,7 @@ WORKDIR /app/
 ENV CRAFTURL 'https://download.craftcdn.com/craft/2.6/2.6.2952/Craft-2.6.2952.zip'
 
 # Download the latest Craft, save as craft.zip in current folder
-RUN wget $CRAFTURL -O "/app/craft.zip"
+RUN curl $CRAFTURL -o "/app/craft.zip"
 
 RUN apt-get update && apt-get install -y unzip
 
