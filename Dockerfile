@@ -29,5 +29,7 @@ COPY scripts/ /app/scripts/
 RUN sh scripts/install/010_dependencies.sh
 
 # add default config
-ADD ./config /app/craft/config
+# ADD ./config /app/craft/config
+
+RUN cp -Rf /app/craft /var/www/ && cp -Rf /app/public/ /var/www/html/ && chmod -R 775 /var/www
 
